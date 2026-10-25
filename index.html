@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Form 1 Revision Quiz</title>
+<style>
+  :root { --ink:#182230; --muted:#5c6675; --line:#dce3ec; --paper:#ffffff; --bg:#f3f6fb; --blue:#2457c5; --blue-light:#eaf1ff; --green:#176b45; --red:#a72d36; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+  header { background:linear-gradient(135deg,#173a83,#3268d4); color:white; padding:30px 18px 25px; }
+  header .inner, main { max-width:850px; margin:0 auto; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; font-weight:700; opacity:.85; }
+  h1 { margin:.35rem 0; line-height:1.15; font-size:clamp(1.8rem,5vw,2.6rem); }
+  header p { margin:.45rem 0 0; opacity:.92; }
+  main { padding:22px 14px 48px; }
+  .intro, .passage, .question, .results { background:var(--paper); border:1px solid var(--line); border-radius:15px; padding:19px; margin-bottom:15px; box-shadow:0 3px 12px #15294b0a; }
+  .meta { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  .pill { background:#ffffff20; border:1px solid #ffffff45; padding:5px 10px; border-radius:99px; font-size:.9rem; }
+  label.name-label { display:block; font-weight:650; margin-bottom:6px; }
+  input[type="text"] { width:100%; max-width:440px; padding:11px 12px; border:1px solid #bbc6d6; border-radius:9px; font:inherit; }
+  h2 { font-size:1.2rem; margin:0 0 10px; }
+  .passage p { margin:.45rem 0; }
+  .question { padding:17px 18px; }
+  .qtitle { font-weight:700; margin:0 0 12px; }
+  .qnum { color:var(--blue); margin-right:5px; }
+  .options { display:grid; gap:8px; }
+  .option { display:flex; align-items:flex-start; gap:10px; border:1px solid var(--line); border-radius:10px; padding:10px 12px; cursor:pointer; transition:background .12s,border-color .12s; }
+  .option:hover { background:#f6f8fc; border-color:#aabbd8; }
+  .option:has(input:checked) { background:var(--blue-light); border-color:var(--blue); }
+  .option input { margin-top:5px; accent-color:var(--blue); }
+  .hint { color:var(--muted); font-size:.9rem; margin-top:10px; }
+  .actions { display:flex; gap:10px; flex-wrap:wrap; margin:20px 0; }
+  button { border:0; border-radius:10px; padding:12px 18px; font:inherit; font-weight:700; cursor:pointer; }
+  .primary { background:var(--blue); color:white; }
+  .secondary { background:#e5eaf2; color:var(--ink); }
+  button:hover { filter:brightness(.97); }
+  .score { font-size:2.2rem; font-weight:800; color:var(--blue); }
+  .result-row { padding:12px 0; border-top:1px solid var(--line); }
+  .result-row:first-of-type { border-top:0; }
+  .correct { color:var(--green); font-weight:700; }
+  .incorrect { color:var(--red); font-weight:700; }
+  .explain { color:var(--muted); margin:.35rem 0 0; }
+  .hidden { display:none; }
+  footer { text-align:center; color:var(--muted); font-size:.88rem; padding:0 15px 28px; }
+  @media (min-width:650px) { .options.two-col { grid-template-columns:1fr 1fr; } }
+  @media print { body { background:white; } header { background:white; color:black; padding:10px 0; } main { padding:10px 0; } .actions, .hint, footer { display:none; } .intro,.passage,.question,.results { box-shadow:none; break-inside:avoid; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div class="eyebrow">Malaysian Lower Secondary</div>
+    <h1>English Form 1 Revision Quiz</h1>
+    <p>Easy practice • Vocabulary, grammar and reading comprehension</p>
+    <div class="meta"><span class="pill">10 questions</span><span class="pill">10 marks</span><span class="pill">Instant feedback</span></div>
+  </div>
+</header>
+<main>
+  <section class="intro">
+    <h2>Before you begin</h2>
+    <p>Choose one answer for each question. When you finish, select <strong>Submit answers</strong> to see your score and explanations. Each question is worth 1 mark.</p>
+    <label class="name-label" for="studentName">Student name (optional)</label>
+    <input id="studentName" type="text" placeholder="Enter your name">
+  </section>
+
+  <section class="passage">
+    <h2>Reading passage: My School Day</h2>
+    <p>Farah is thirteen years old and lives in Terengganu. She studies at a secondary school near her house. She goes to school by bus every morning.</p>
+    <p>Her favourite subject is English because she enjoys learning new words. During recess, she eats with her friends at the school canteen. After school, she has lunch with her family and does her homework. In the evening, she sometimes plays badminton with her younger brother.</p>
+  </section>
+
+  <form id="quizForm">
+    <div id="questions"></div>
+    <div class="actions">
+      <button class="primary" type="submit">Submit answers</button>
+      <button class="secondary" type="button" id="resetBtn">Start again</button>
+    </div>
+  </form>
+
+  <section id="results" class="results hidden" aria-live="polite">
+    <h2>Your results</h2>
+    <p id="greeting"></p>
+    <div class="score" id="score"></div>
+    <p id="comment"></p>
+    <div id="review"></div>
+    <div class="actions">
+      <button class="primary" type="button" id="printBtn">Print results</button>
+      <button class="secondary" type="button" id="retryBtn">Try again</button>
+    </div>
+    <p class="hint">This quiz runs in your browser. It does not send or save student names or answers to a teacher automatically.</p>
+  </section>
+</main>
+<footer>English Form 1 • Revision practice</footer>
+<script>
+const quiz = [
+ {q:"My mother works in a hospital. She is a _____.", options:["nurse","farmer","pilot","mechanic"], a:0, why:"A nurse cares for patients in a hospital."},
+ {q:"Ali _____ to school every day.", options:["walk","walks","walking","walked"], a:1, why:"Use “walks” with the singular subject Ali in the simple present."},
+ {q:"They _____ playing badminton now.", options:["is","am","are","was"], a:2, why:"Use “are” with “they” in the present continuous tense."},
+ {q:"I have _____ orange in my bag.", options:["a","an","some","any"], a:1, why:"Use “an” before a vowel sound, as in “orange”."},
+ {q:"What is the opposite of “big”?", options:["long","small","wide","tall"], a:1, why:"“Small” is the opposite of “big”."},
+ {q:"The boys _____ football yesterday.", options:["play","plays","played","playing"], a:2, why:"“Played” is the simple past form of “play”. “Yesterday” tells us the action happened in the past."},
+ {q:"My birthday is _____ July.", options:["at","on","in","by"], a:2, why:"Use “in” with months, for example, “in July”."},
+ {q:"According to the reading passage, how does Farah travel to school?", options:["By car","By bus","On foot","By train"], a:1, why:"The passage says Farah goes to school by bus every morning."},
+ {q:"True or False: “She walk to school every day” uses the correct simple present verb form.", options:["True","False"], a:1, why:"The correct sentence is “She walks to school every day.” With “she”, the verb takes -s in the simple present."},
+ {q:"True or False: A library is a place where people can borrow books.", options:["True","False"], a:0, why:"A library is a place where people can read or borrow books."}
+];
+const container = document.getElementById('questions');
+quiz.forEach((item,i) => {
+  const section = document.createElement('section');
+  section.className = 'question';
+  const title = document.createElement('p');
+  title.className = 'qtitle';
+  title.innerHTML = `<span class="qnum">${i+1}.</span> ${item.q}`;
+  section.appendChild(title);
+  const options = document.createElement('div');
+  options.className = 'options' + (item.options.length === 4 ? ' two-col' : '');
+  item.options.forEach((option,j) => {
+    const label = document.createElement('label');
+    label.className = 'option';
+    const input = document.createElement('input');
+    input.type = 'radio'; input.name = `q${i}`; input.value = j; input.required = true;
+    const text = document.createElement('span');
+    text.textContent = `${String.fromCharCode(65+j)}. ${option}`;
+    label.append(input,text); options.appendChild(label);
+  });
+  section.appendChild(options);
+  container.appendChild(section);
+});
+const form = document.getElementById('quizForm');
+const results = document.getElementById('results');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  let score = 0;
+  const review = document.getElementById('review');
+  review.replaceChildren();
+  quiz.forEach((item,i) => {
+    const chosen = form.querySelector(`input[name="q${i}"]:checked`);
+    const val = chosen ? Number(chosen.value) : -1;
+    const correct = val === item.a;
+    if(correct) score++;
+    const row = document.createElement('div'); row.className = 'result-row';
+    const heading = document.createElement('div');
+    heading.className = correct ? 'correct' : 'incorrect';
+    heading.textContent = `${i+1}. ${correct ? 'Correct' : 'Not quite'}`;
+    const answer = document.createElement('div');
+    answer.textContent = `Correct answer: ${String.fromCharCode(65+item.a)}. ${item.options[item.a]}`;
+    const explanation = document.createElement('p'); explanation.className='explain'; explanation.textContent=item.why;
+    row.append(heading,answer,explanation); review.appendChild(row);
+  });
+  const name = document.getElementById('studentName').value.trim();
+  document.getElementById('greeting').textContent = name ? `Well done, ${name}. Here is your result:` : 'Here is your result:';
+  document.getElementById('score').textContent = `${score} / ${quiz.length}`;
+  const pct = score / quiz.length;
+  document.getElementById('comment').textContent = pct === 1 ? 'Excellent work! You answered every question correctly.' : pct >= .7 ? 'Good effort! Review any questions you missed.' : pct >= .5 ? 'Nice try. Read the explanations and practise again.' : 'Keep practising. Review the explanations and try the quiz again.';
+  results.classList.remove('hidden');
+  results.scrollIntoView({behavior:'smooth',block:'start'});
+  form.querySelectorAll('input').forEach(el => el.disabled = true);
+  form.querySelector('button[type="submit"]').disabled = true;
+});
+function resetQuiz() {
+  form.reset();
+  form.querySelectorAll('input').forEach(el => el.disabled = false);
+  form.querySelector('button[type="submit"]').disabled = false;
+  results.classList.add('hidden');
+  document.getElementById('studentName').focus();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.getElementById('resetBtn').addEventListener('click',resetQuiz);
+document.getElementById('retryBtn').addEventListener('click',resetQuiz);
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+</script>
+</body>
+</html>
