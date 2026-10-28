@@ -1,224 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>English Form 1 Revision Quiz - 60 Questions (Updated)</title>
+<title>Form 1 English — Intermediate PDPR Practice</title>
 <style>
-  :root { --ink:#182230; --muted:#5c6675; --line:#dce3ec; --paper:#ffffff; --bg:#f3f6fb; --blue:#2457c5; --blue-light:#eaf1ff; --green:#176b45; --red:#a72d36; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
-  header { background:linear-gradient(135deg,#173a83,#3268d4); color:white; padding:30px 18px 25px; }
-  header .inner, main { max-width:850px; margin:0 auto; }
-  .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; font-weight:700; opacity:.85; }
-  h1 { margin:.35rem 0; line-height:1.15; font-size:clamp(1.8rem,5vw,2.6rem); }
-  header p { margin:.45rem 0 0; opacity:.92; }
-  main { padding:22px 14px 48px; }
-  .intro, .passage, .question, .results { background:var(--paper); border:1px solid var(--line); border-radius:15px; padding:19px; margin-bottom:15px; box-shadow:0 3px 12px #15294b0a; }
-  .meta { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
-  .pill { background:#ffffff20; border:1px solid #ffffff45; padding:5px 10px; border-radius:99px; font-size:.9rem; }
-  label.name-label { display:block; font-weight:650; margin-bottom:6px; }
-  input[type="text"] { width:100%; max-width:440px; padding:11px 12px; border:1px solid #bbc6d6; border-radius:9px; font:inherit; }
-  h2 { font-size:1.2rem; margin:0 0 10px; }
-  .passage p { margin:.45rem 0; }
-  .question { padding:17px 18px; }
-  .qtitle { font-weight:700; margin:0 0 12px; }
-  .qnum { color:var(--blue); margin-right:5px; }
-  .options { display:grid; gap:8px; }
-  .option { display:flex; align-items:flex-start; gap:10px; border:1px solid var(--line); border-radius:10px; padding:10px 12px; cursor:pointer; transition:background .12s,border-color .12s; }
-  .option:hover { background:#f6f8fc; border-color:#aabbd8; }
-  .option:has(input:checked) { background:var(--blue-light); border-color:var(--blue); }
-  .option input { margin-top:5px; accent-color:var(--blue); }
-  .hint { color:var(--muted); font-size:.9rem; margin-top:10px; }
-  .actions { display:flex; gap:10px; flex-wrap:wrap; margin:20px 0; }
-  button { border:0; border-radius:10px; padding:12px 18px; font:inherit; font-weight:700; cursor:pointer; }
-  .primary { background:var(--blue); color:white; }
-  .secondary { background:#e5eaf2; color:var(--ink); }
-  button:hover { filter:brightness(.97); }
-  .score { font-size:2.2rem; font-weight:800; color:var(--blue); }
-  .result-row { padding:12px 0; border-top:1px solid var(--line); }
-  .result-row:first-of-type { border-top:0; }
-  .correct { color:var(--green); font-weight:700; }
-  .incorrect { color:var(--red); font-weight:700; }
-  .explain { color:var(--muted); margin:.35rem 0 0; }
-  .hidden { display:none; }
-  footer { text-align:center; color:var(--muted); font-size:.88rem; padding:0 15px 28px; }
-  @media (min-width:650px) { .options.two-col { grid-template-columns:1fr 1fr; } }
-  @media print { body { background:white; } header { background:white; color:black; padding:10px 0; } main { padding:10px 0; } .actions, .hint, footer { display:none; } .intro,.passage,.question,.results { box-shadow:none; break-inside:avoid; } }
+:root{--ink:#1e293b;--muted:#64748b;--paper:#fff;--bg:#f1f5f9;--blue:#1d4ed8;--line:#cbd5e1;--green:#166534}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif}
+header{background:#173b70;color:white;padding:25px 16px}header .wrap,main{max-width:950px;margin:auto}
+h1{margin:0 0 6px;font-size:clamp(1.5rem,4vw,2.2rem)}header p{margin:4px 0}
+main{padding:18px 12px 48px}.panel,section{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 16px;box-shadow:0 2px 7px #0f172a0a}
+h2{font-size:1.25rem;margin:0 0 10px;color:#173b70}h3{font-size:1.05rem;margin:16px 0 6px}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+label.field{display:block;font-weight:bold}input[type=text],textarea,select{width:100%;padding:10px;border:1px solid #94a3b8;border-radius:7px;font:inherit;margin-top:5px}
+.q{padding:12px 0;border-bottom:1px solid #e2e8f0}.q:last-child{border-bottom:0}.q p{margin:0 0 7px}.options{display:grid;gap:5px}
+.options label{display:block;padding:5px 8px;border-radius:6px;cursor:pointer}.options label:hover{background:#eff6ff}
+input[type=radio],input[type=checkbox]{margin-right:7px}.passage{background:#f8fafc;border-left:4px solid #60a5fa;padding:12px 15px;border-radius:4px}
+button{border:0;border-radius:8px;padding:11px 16px;font:inherit;font-weight:bold;cursor:pointer;margin:5px 6px 5px 0}
+.primary{background:var(--blue);color:white}.secondary{background:#e2e8f0;color:var(--ink)}.result{font-size:1.1rem;font-weight:bold;padding:14px;background:#eff6ff;border-radius:8px;margin-top:12px}
+.small{font-size:.9rem;color:var(--muted)}.timer{font-size:1.1rem;font-weight:bold;font-variant-numeric:tabular-nums}.sticky{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);padding:9px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.answer-key{display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px;white-space:pre-wrap}
+footer{text-align:center;color:var(--muted);padding:10px}
+@media print{body{background:white;font-size:11pt}.sticky,button,.no-print{display:none!important}.panel,section{box-shadow:none;break-inside:avoid}main{max-width:none;padding:0}.answer-key{display:none!important}textarea{min-height:60px}}
 </style>
 </head>
 <body>
-<header>
-  <div class="inner">
-    <div class="eyebrow">Malaysian Lower Secondary</div>
-    <h1>English Form 1 Revision Quiz</h1>
-    <p>Easy practice • Vocabulary, grammar and reading comprehension</p>
-    <div class="meta"><span class="pill">60 questions total</span><span class="pill">60 marks total</span><span class="pill">Instant feedback</span></div>
-  </div>
-</header>
+<header><div class="wrap">
+<h1>Form 1 English: Intermediate Practice</h1>
+<p>PDPR self-study worksheet · Suggested duration: 2 hours 30 minutes (150 minutes)</p>
+<p>Skills: Grammar, vocabulary, reading, functional language and writing</p>
+</div></header>
+<div class="sticky no-print"><span class="timer" id="timer">Time: 150:00</span><span class="small">Your answers stay in this browser until you close or refresh the page.</span><button class="secondary" type="button" onclick="window.print()">Print worksheet</button></div>
 <main>
-  <section class="intro">
-    <h2>Before you begin</h2>
-    <p>Choose one answer for each question. When you finish, select <strong>Submit answers</strong> to see your score and explanations. There are 60 questions, and each question is worth 1 mark.</p>
-    <label class="name-label" for="studentName">Student name (optional)</label>
-    <input id="studentName" type="text" placeholder="Enter your name">
-  </section>
+<div class="panel">
+<h2>Student details and instructions</h2>
+<div class="meta">
+<label class="field">Student name<input id="studentName" type="text" placeholder="Enter your name"></label>
+<label class="field">Class<input id="studentClass" type="text" placeholder="e.g. 1 An-Nur"></label>
+</div>
+<p><strong>Instructions:</strong> Answer every question. Choose one answer for each multiple-choice question. Read the passages carefully. For writing tasks, use complete sentences and check spelling, punctuation and grammar.</p>
+<p><strong>Suggested timing:</strong> Section A Grammar (30 min), Section B Vocabulary (25 min), Section C Reading (35 min), Section D Functional English (20 min), Section E Writing (35 min), checking (5 min).</p>
+<p class="small">The objective sections are marked automatically. Writing tasks require teacher marking. The timer is a guide and does not submit your work automatically.</p>
+</div>
 
-  <section class="passage">
-    <h2>Reading passage: My School Day</h2>
-    <p>Farah is thirteen years old and lives in Terengganu. She studies at a secondary school near her house. She goes to school by bus every morning.</p>
-    <p>Her favourite subject is English because she enjoys learning new words. During recess, she eats with her friends at the school canteen. After school, she has lunch with her family and does her homework. In the evening, she sometimes plays badminton with her younger brother.</p>
-  </section>
+<form id="quiz">
+<section>
+<h2>Section A — Grammar (15 marks)</h2>
+<p class="small">Choose the best answer.</p>
+<div class="q"><p><strong>1.</strong> My sister _____ to school by bus every day.</p><div class="options">
+<label><input type="radio" name="q1" value="A"> A. go</label><label><input type="radio" name="q1" value="B"> B. goes</label><label><input type="radio" name="q1" value="C"> C. going</label><label><input type="radio" name="q1" value="D"> D. gone</label></div></div>
+<div class="q"><p><strong>2.</strong> We _____ a film when the electricity went off.</p><div class="options">
+<label><input type="radio" name="q2" value="A"> A. watch</label><label><input type="radio" name="q2" value="B"> B. watched</label><label><input type="radio" name="q2" value="C"> C. were watching</label><label><input type="radio" name="q2" value="D"> D. are watching</label></div></div>
+<div class="q"><p><strong>3.</strong> There _____ any milk left in the fridge.</p><div class="options">
+<label><input type="radio" name="q3" value="A"> A. aren't</label><label><input type="radio" name="q3" value="B"> B. isn't</label><label><input type="radio" name="q3" value="C"> C. don't</label><label><input type="radio" name="q3" value="D"> D. weren't</label></div></div>
+<div class="q"><p><strong>4.</strong> Farah is _____ than her younger brother.</p><div class="options">
+<label><input type="radio" name="q4" value="A"> A. tall</label><label><input type="radio" name="q4" value="B"> B. tallest</label><label><input type="radio" name="q4" value="C"> C. more tall</label><label><input type="radio" name="q4" value="D"> D. taller</label></div></div>
+<div class="q"><p><strong>5.</strong> You _____ wear a helmet when riding a motorcycle.</p><div class="options">
+<label><input type="radio" name="q5" value="A"> A. should</label><label><input type="radio" name="q5" value="B"> B. would</label><label><input type="radio" name="q5" value="C"> C. might not</label><label><input type="radio" name="q5" value="D"> D. can to</label></div></div>
+<div class="q"><p><strong>6.</strong> I have lived in this town _____ 2022.</p><div class="options">
+<label><input type="radio" name="q6" value="A"> A. for</label><label><input type="radio" name="q6" value="B"> B. since</label><label><input type="radio" name="q6" value="C"> C. during</label><label><input type="radio" name="q6" value="D"> D. from</label></div></div>
+<div class="q"><p><strong>7.</strong> The students _____ their homework before dinner yesterday.</p><div class="options">
+<label><input type="radio" name="q7" value="A"> A. finish</label><label><input type="radio" name="q7" value="B"> B. finishes</label><label><input type="radio" name="q7" value="C"> C. finished</label><label><input type="radio" name="q7" value="D"> D. finishing</label></div></div>
+<div class="q"><p><strong>8.</strong> This is the boy _____ helped me carry the books.</p><div class="options">
+<label><input type="radio" name="q8" value="A"> A. which</label><label><input type="radio" name="q8" value="B"> B. where</label><label><input type="radio" name="q8" value="C"> C. who</label><label><input type="radio" name="q8" value="D"> D. whose</label></div></div>
+<div class="q"><p><strong>9.</strong> Neither Amir nor his friends _____ late today.</p><div class="options">
+<label><input type="radio" name="q9" value="A"> A. is</label><label><input type="radio" name="q9" value="B"> B. are</label><label><input type="radio" name="q9" value="C"> C. was</label><label><input type="radio" name="q9" value="D"> D. be</label></div></div>
+<div class="q"><p><strong>10.</strong> If it rains, we _____ the picnic indoors.</p><div class="options">
+<label><input type="radio" name="q10" value="A"> A. move</label><label><input type="radio" name="q10" value="B"> B. moved</label><label><input type="radio" name="q10" value="C"> C. will move</label><label><input type="radio" name="q10" value="D"> D. moving</label></div></div>
+<div class="q"><p><strong>11.</strong> There are _____ apples in the basket, enough for everyone.</p><div class="options">
+<label><input type="radio" name="q11" value="A"> A. a little</label><label><input type="radio" name="q11" value="B"> B. much</label><label><input type="radio" name="q11" value="C"> C. plenty of</label><label><input type="radio" name="q11" value="D"> D. any</label></div></div>
+<div class="q"><p><strong>12.</strong> The library is _____ the science laboratory and the office.</p><div class="options">
+<label><input type="radio" name="q12" value="A"> A. between</label><label><input type="radio" name="q12" value="B"> B. across</label><label><input type="radio" name="q12" value="C"> C. through</label><label><input type="radio" name="q12" value="D"> D. above</label></div></div>
+<div class="q"><p><strong>13.</strong> “I _____ my keys,” said Daniel. “I can't find them anywhere.”</p><div class="options">
+<label><input type="radio" name="q13" value="A"> A. lose</label><label><input type="radio" name="q13" value="B"> B. lost</label><label><input type="radio" name="q13" value="C"> C. have lost</label><label><input type="radio" name="q13" value="D"> D. am losing yesterday</label></div></div>
+<div class="q"><p><strong>14.</strong> The classroom _____ every afternoon.</p><div class="options">
+<label><input type="radio" name="q14" value="A"> A. cleans</label><label><input type="radio" name="q14" value="B"> B. is cleaned</label><label><input type="radio" name="q14" value="C"> C. cleaned</label><label><input type="radio" name="q14" value="D"> D. is cleaning</label></div></div>
+<div class="q"><p><strong>15.</strong> You are coming to the English Club, _____?</p><div class="options">
+<label><input type="radio" name="q15" value="A"> A. are you</label><label><input type="radio" name="q15" value="B"> B. do you</label><label><input type="radio" name="q15" value="C"> C. aren't you</label><label><input type="radio" name="q15" value="D"> D. don't you</label></div></div>
+</section>
 
-  <form id="quizForm">
-    <div id="questions"></div>
-    <div class="actions">
-      <button class="primary" type="submit">Submit answers</button>
-      <button class="secondary" type="button" id="resetBtn">Start again</button>
-    </div>
-  </form>
+<section>
+<h2>Section B — Vocabulary (15 marks)</h2>
+<div class="q"><p><strong>16.</strong> The road was very _____ after the heavy rain, so we walked carefully.</p><div class="options"><label><input type="radio" name="q16" value="A"> A. slippery</label><label><input type="radio" name="q16" value="B"> B. crowded</label><label><input type="radio" name="q16" value="C"> C. peaceful</label><label><input type="radio" name="q16" value="D"> D. thirsty</label></div></div>
+<div class="q"><p><strong>17.</strong> A person who designs buildings is an _____.</p><div class="options"><label><input type="radio" name="q17" value="A"> A. accountant</label><label><input type="radio" name="q17" value="B"> B. architect</label><label><input type="radio" name="q17" value="C"> C. athlete</label><label><input type="radio" name="q17" value="D"> D. electrician</label></div></div>
+<div class="q"><p><strong>18.</strong> Please _____ the lights before leaving the room.</p><div class="options"><label><input type="radio" name="q18" value="A"> A. switch off</label><label><input type="radio" name="q18" value="B"> B. look after</label><label><input type="radio" name="q18" value="C"> C. get along</label><label><input type="radio" name="q18" value="D"> D. take part</label></div></div>
+<div class="q"><p><strong>19.</strong> The opposite of “generous” is _____.</p><div class="options"><label><input type="radio" name="q19" value="A"> A. helpful</label><label><input type="radio" name="q19" value="B"> B. selfish</label><label><input type="radio" name="q19" value="C"> C. cheerful</label><label><input type="radio" name="q19" value="D"> D. polite</label></div></div>
+<div class="q"><p><strong>20.</strong> We should put paper and plastic into the recycling _____.</p><div class="options"><label><input type="radio" name="q20" value="A"> A. station</label><label><input type="radio" name="q20" value="B"> B. bin</label><label><input type="radio" name="q20" value="C"> C. shelf</label><label><input type="radio" name="q20" value="D"> D. envelope</label></div></div>
+<div class="q"><p><strong>21.</strong> The football match was _____ because of the storm.</p><div class="options"><label><input type="radio" name="q21" value="A"> A. postponed</label><label><input type="radio" name="q21" value="B"> B. borrowed</label><label><input type="radio" name="q21" value="C"> C. repaired</label><label><input type="radio" name="q21" value="D"> D. invited</label></div></div>
+<div class="q"><p><strong>22.</strong> A “spectator” is someone who _____.</p><div class="options"><label><input type="radio" name="q22" value="A"> A. repairs machines</label><label><input type="radio" name="q22" value="B"> B. watches an event</label><label><input type="radio" name="q22" value="C"> C. teaches a class</label><label><input type="radio" name="q22" value="D"> D. grows vegetables</label></div></div>
+<div class="q"><p><strong>23.</strong> I was _____ when my team won the final.</p><div class="options"><label><input type="radio" name="q23" value="A"> A. delighted</label><label><input type="radio" name="q23" value="B"> B. exhaustedly</label><label><input type="radio" name="q23" value="C"> C. careless</label><label><input type="radio" name="q23" value="D"> D. ordinary</label></div></div>
+<div class="q"><p><strong>24.</strong> Which word means “to make something better”?</p><div class="options"><label><input type="radio" name="q24" value="A"> A. improve</label><label><input type="radio" name="q24" value="B"> B. prevent</label><label><input type="radio" name="q24" value="C"> C. avoid</label><label><input type="radio" name="q24" value="D"> D. refuse</label></div></div>
+<div class="q"><p><strong>25.</strong> The word “ancient” describes something that is _____.</p><div class="options"><label><input type="radio" name="q25" value="A"> A. very old</label><label><input type="radio" name="q25" value="B"> B. very noisy</label><label><input type="radio" name="q25" value="C"> C. very expensive</label><label><input type="radio" name="q25" value="D"> D. very narrow</label></div></div>
+<div class="q"><p><strong>26.</strong> You need a _____ to borrow books from the library.</p><div class="options"><label><input type="radio" name="q26" value="A"> A. recipe</label><label><input type="radio" name="q26" value="B"> B. library card</label><label><input type="radio" name="q26" value="C"> C. passport photo</label><label><input type="radio" name="q26" value="D"> D. timetable bell</label></div></div>
+<div class="q"><p><strong>27.</strong> Which is the best adjective for a person who always tells the truth?</p><div class="options"><label><input type="radio" name="q27" value="A"> A. honest</label><label><input type="radio" name="q27" value="B"> B. impatient</label><label><input type="radio" name="q27" value="C"> C. nervous</label><label><input type="radio" name="q27" value="D"> D. jealous</label></div></div>
+<div class="q"><p><strong>28.</strong> We went on a guided _____ through the rainforest.</p><div class="options"><label><input type="radio" name="q28" value="A"> A. excursion</label><label><input type="radio" name="q28" value="B"> B. argument</label><label><input type="radio" name="q28" value="C"> C. appointment</label><label><input type="radio" name="q28" value="D"> D. instruction</label></div></div>
+<div class="q"><p><strong>29.</strong> “Affordable” means _____.</p><div class="options"><label><input type="radio" name="q29" value="A"> A. difficult to carry</label><label><input type="radio" name="q29" value="B"> B. not too expensive</label><label><input type="radio" name="q29" value="C"> C. impossible to find</label><label><input type="radio" name="q29" value="D"> D. made by hand</label></div></div>
+<div class="q"><p><strong>30.</strong> After exercising, remember to _____ water.</p><div class="options"><label><input type="radio" name="q30" value="A"> A. drink plenty of</label><label><input type="radio" name="q30" value="B"> B. do plenty of</label><label><input type="radio" name="q30" value="C"> C. make plenty</label><label><input type="radio" name="q30" value="D"> D. take plenty at</label></div></div>
+</section>
 
-  <section id="results" class="results hidden" aria-live="polite">
-    <h2>Your results</h2>
-    <p id="greeting"></p>
-    <div class="score" id="score"></div>
-    <p id="comment"></p>
-    <div id="review"></div>
-    <div class="actions">
-      <button class="primary" type="button" id="printBtn">Print results</button>
-      <button class="secondary" type="button" id="retryBtn">Try again</button>
-    </div>
-    <p class="hint">This quiz runs in your browser. It does not send or save student names or answers to a teacher automatically.</p>
-  </section>
+<section>
+<h2>Section C — Reading comprehension (10 marks)</h2>
+<div class="passage">
+<h3>A Greener School</h3>
+<p>At the beginning of the school year, the Green Team at Seri Murni Secondary School noticed that many students threw recyclable items into ordinary rubbish bins. The team decided to start a campaign called “Small Actions, Big Difference”. Their first task was to place clearly labelled recycling bins near the canteen, library and science block.</p>
+<p>Next, the students made short announcements during assembly. They explained that paper, clean plastic bottles and aluminium cans could be recycled. They also reminded everyone to rinse bottles before placing them in the bins. Some students were not interested at first because they thought recycling took too much time. The Green Team responded by organising a friendly competition between classes.</p>
+<p>Every Friday, volunteers weighed each class’s recyclable materials and recorded the results on a noticeboard. The winning class received a certificate and could choose a tree to plant in the school garden. After two months, the amount of recyclable waste collected had increased. The school also used both sides of scrap paper for rough work. The team learnt that lasting change did not happen overnight, but small habits could make a real difference when many people worked together.</p>
+</div>
+<div class="q"><p><strong>31.</strong> What problem did the Green Team notice?</p><div class="options"><label><input type="radio" name="q31" value="A"> A. Students damaged the school garden.</label><label><input type="radio" name="q31" value="B"> B. Recyclable items were put in ordinary bins.</label><label><input type="radio" name="q31" value="C"> C. The canteen sold too much food.</label><label><input type="radio" name="q31" value="D"> D. Teachers stopped making announcements.</label></div></div>
+<div class="q"><p><strong>32.</strong> What was the campaign called?</p><div class="options"><label><input type="radio" name="q32" value="A"> A. A Cleaner Canteen</label><label><input type="radio" name="q32" value="B"> B. Trees for Everyone</label><label><input type="radio" name="q32" value="C"> C. Small Actions, Big Difference</label><label><input type="radio" name="q32" value="D"> D. Friday Volunteers</label></div></div>
+<div class="q"><p><strong>33.</strong> Which item is mentioned as recyclable?</p><div class="options"><label><input type="radio" name="q33" value="A"> A. Dirty tissues</label><label><input type="radio" name="q33" value="B"> B. Leftover rice</label><label><input type="radio" name="q33" value="C"> C. Clean plastic bottles</label><label><input type="radio" name="q33" value="D"> D. Broken food containers with food inside</label></div></div>
+<div class="q"><p><strong>34.</strong> Why did some students not join in at first?</p><div class="options"><label><input type="radio" name="q34" value="A"> A. They thought recycling took too much time.</label><label><input type="radio" name="q34" value="B"> B. They were not allowed into the library.</label><label><input type="radio" name="q34" value="C"> C. They disliked planting trees.</label><label><input type="radio" name="q34" value="D"> D. They had no classes on Friday.</label></div></div>
+<div class="q"><p><strong>35.</strong> How often did volunteers weigh the materials?</p><div class="options"><label><input type="radio" name="q35" value="A"> A. Every day</label><label><input type="radio" name="q35" value="B"> B. Every Friday</label><label><input type="radio" name="q35" value="C"> C. Every month</label><label><input type="radio" name="q35" value="D"> D. Once a year</label></div></div>
+<div class="q"><p><strong>36.</strong> What could the winning class choose?</p><div class="options"><label><input type="radio" name="q36" value="A"> A. A new classroom</label><label><input type="radio" name="q36" value="B"> B. A school uniform</label><label><input type="radio" name="q36" value="C"> C. A tree to plant</label><label><input type="radio" name="q36" value="D"> D. A longer holiday</label></div></div>
+<div class="q"><p><strong>37.</strong> After two months, what happened?</p><div class="options"><label><input type="radio" name="q37" value="A"> A. Recycling stopped.</label><label><input type="radio" name="q37" value="B"> B. Recyclable waste collected increased.</label><label><input type="radio" name="q37" value="C"> C. The school removed all bins.</label><label><input type="radio" name="q37" value="D"> D. Students stopped using paper.</label></div></div>
+<div class="q"><p><strong>38.</strong> The word “lasting” in the final paragraph is closest in meaning to _____.</p><div class="options"><label><input type="radio" name="q38" value="A"> A. temporary</label><label><input type="radio" name="q38" value="B"> B. noisy</label><label><input type="radio" name="q38" value="C"> C. continuing for a long time</label><label><input type="radio" name="q38" value="D"> D. difficult to understand</label></div></div>
+<div class="q"><p><strong>39.</strong> What can we infer about the class competition?</p><div class="options"><label><input type="radio" name="q39" value="A"> A. It encouraged students to recycle more.</label><label><input type="radio" name="q39" value="B"> B. It made students leave school early.</label><label><input type="radio" name="q39" value="C"> C. It replaced all science lessons.</label><label><input type="radio" name="q39" value="D"> D. It was cancelled after one day.</label></div></div>
+<div class="q"><p><strong>40.</strong> What is the main message of the passage?</p><div class="options"><label><input type="radio" name="q40" value="A"> A. Only teachers can protect the environment.</label><label><input type="radio" name="q40" value="B"> B. Small actions by many people can create change.</label><label><input type="radio" name="q40" value="C"> C. Competitions are always unfair.</label><label><input type="radio" name="q40" value="D"> D. Schools should stop using paper completely.</label></div></div>
+</section>
+
+<section>
+<h2>Section D — Functional English (10 marks)</h2>
+<div class="q"><p><strong>41.</strong> Your friend says, “I’m worried about tomorrow’s test.” What is the best response?</p><div class="options"><label><input type="radio" name="q41" value="A"> A. That’s impossible!</label><label><input type="radio" name="q41" value="B"> B. You should revise a little and get enough rest.</label><label><input type="radio" name="q41" value="C"> C. Never speak to me.</label><label><input type="radio" name="q41" value="D"> D. I don’t care what time it is.</label></div></div>
+<div class="q"><p><strong>42.</strong> Which sentence politely asks for help?</p><div class="options"><label><input type="radio" name="q42" value="A"> A. Give me your notes now!</label><label><input type="radio" name="q42" value="B"> B. You must do this.</label><label><input type="radio" name="q42" value="C"> C. Could you help me with this question, please?</label><label><input type="radio" name="q42" value="D"> D. Why are you here?</label></div></div>
+<div class="q"><p><strong>43.</strong> “Would you like to join our badminton game?” “_____”</p><div class="options"><label><input type="radio" name="q43" value="A"> A. Yes, I’d love to.</label><label><input type="radio" name="q43" value="B"> B. It belongs to my bag.</label><label><input type="radio" name="q43" value="C"> C. I am fourteen centimetres.</label><label><input type="radio" name="q43" value="D"> D. Yesterday at three.</label></div></div>
+<div class="q"><p><strong>44.</strong> You accidentally step on your classmate’s foot. What should you say?</p><div class="options"><label><input type="radio" name="q44" value="A"> A. Well done!</label><label><input type="radio" name="q44" value="B"> B. I’m sorry. Are you all right?</label><label><input type="radio" name="q44" value="C"> C. See you tomorrow.</label><label><input type="radio" name="q44" value="D"> D. Congratulations!</label></div></div>
+<div class="q"><p><strong>45.</strong> Which is the most suitable opening for an email to a friend?</p><div class="options"><label><input type="radio" name="q45" value="A"> A. Dear Sir or Madam,</label><label><input type="radio" name="q45" value="B"> B. To whom it may concern,</label><label><input type="radio" name="q45" value="C"> C. Hi Aina,</label><label><input type="radio" name="q45" value="D"> D. Yours faithfully,</label></div></div>
+<div class="q"><p><strong>46.</strong> “How about meeting at the library at 2 p.m.?” is a _____.</p><div class="options"><label><input type="radio" name="q46" value="A"> A. suggestion</label><label><input type="radio" name="q46" value="B"> B. warning</label><label><input type="radio" name="q46" value="C"> C. complaint</label><label><input type="radio" name="q46" value="D"> D. apology</label></div></div>
+<div class="q"><p><strong>47.</strong> Choose the correct response. “Thank you for lending me your dictionary.”</p><div class="options"><label><input type="radio" name="q47" value="A"> A. You’re welcome.</label><label><input type="radio" name="q47" value="B"> B. I disagree.</label><label><input type="radio" name="q47" value="C"> C. I’m afraid not.</label><label><input type="radio" name="q47" value="D"> D. Never mind the weather.</label></div></div>
+<div class="q"><p><strong>48.</strong> Which sentence gives directions?</p><div class="options"><label><input type="radio" name="q48" value="A"> A. I prefer fried rice.</label><label><input type="radio" name="q48" value="B"> B. Go straight and turn left at the traffic lights.</label><label><input type="radio" name="q48" value="C"> C. I went there last year.</label><label><input type="radio" name="q48" value="D"> D. She is taller than me.</label></div></div>
+<div class="q"><p><strong>49.</strong> Your friend has won a storytelling competition. You say _____.</p><div class="options"><label><input type="radio" name="q49" value="A"> A. What a terrible idea!</label><label><input type="radio" name="q49" value="B"> B. Congratulations! You did brilliantly.</label><label><input type="radio" name="q49" value="C"> C. I’m sorry to hear that.</label><label><input type="radio" name="q49" value="D"> D. Please be quiet.</label></div></div>
+<div class="q"><p><strong>50.</strong> Which phrase is best for ending an informal email?</p><div class="options"><label><input type="radio" name="q50" value="A"> A. Yours sincerely,</label><label><input type="radio" name="q50" value="B"> B. Yours faithfully,</label><label><input type="radio" name="q50" value="C"> C. Best wishes,</label><label><input type="radio" name="q50" value="D"> D. Dear Sir,</label></div></div>
+</section>
+
+<section>
+<h2>Section E — Writing (Teacher-marked: 20 marks)</h2>
+<p class="small">Write in your own words. Suggested total: 35 minutes. Save your work before submitting or printing.</p>
+<h3>Task 1: Informal email (10 marks, 80–100 words)</h3>
+<p>Your friend wants to know about your school’s English Week. Write an email to your friend. Include:</p>
+<ul><li>when English Week will take place;</li><li>two activities you can join;</li><li>why you think students will enjoy it; and</li><li>an invitation for your friend to take part.</li></ul>
+<label class="field">Email response<textarea name="writing1" rows="8" placeholder="Hi ..."></textarea></label>
+<h3>Task 2: Short composition (10 marks, 100–120 words)</h3>
+<p>Write a composition titled <strong>“A Day I Will Never Forget”</strong>. Explain what happened, who was with you, how you felt, and why the day was special. Organise your ideas into paragraphs.</p>
+<label class="field">Composition<textarea name="writing2" rows="10" placeholder="A Day I Will Never Forget"></textarea></label>
+</section>
+
+<section>
+<h2>Submit and check your work</h2>
+<p>Click below to mark the 50 objective questions. Writing tasks are not included in the automatic score.</p>
+<button class="primary" type="button" onclick="markQuiz()">Mark objective questions</button>
+<button class="secondary" type="button" onclick="downloadAnswers()">Download my answers (.txt)</button>
+<button class="secondary" type="reset" onclick="resetScore()">Clear all answers</button>
+<div id="result" class="result" aria-live="polite" style="display:none"></div>
+</section>
+</form>
+<!--
+<section class="no-print">
+<h2>Teacher answer key</h2>
+<p class="small">Keep this section hidden when sharing the worksheet with students. Click to reveal the answers.</p>
+<button class="secondary" type="button" onclick="toggleKey()">Show / hide answer key</button>
+<div id="answerKey" class="answer-key">Section A — Grammar
+1 B (goes) · 2 C (were watching) · 3 B (isn't) · 4 D (taller) · 5 A (should)
+6 B (since) · 7 C (finished) · 8 C (who) · 9 B (are) · 10 C (will move)
+11 C (plenty of) · 12 A (between) · 13 C (have lost) · 14 B (is cleaned) · 15 C (aren't you)
+
+Section B — Vocabulary
+16 A · 17 B · 18 A · 19 B · 20 B · 21 A · 22 B · 23 A · 24 A · 25 A
+26 B · 27 A · 28 A · 29 B · 30 A
+
+Section C — Reading
+31 B · 32 C · 33 C · 34 A · 35 B · 36 C · 37 B · 38 C · 39 A · 40 B
+
+Section D — Functional English
+41 B · 42 C · 43 A · 44 B · 45 C · 46 A · 47 A · 48 B · 49 B · 50 C
+
+Writing rubric (10 marks per task)
+Content and task fulfilment: 0–4
+Organisation and linking: 0–2
+Grammar and sentence structure: 0–2
+Vocabulary, spelling and punctuation: 0–2
+Accept any relevant, coherent response. Reward clear communication appropriate to Form 1 level.</div>
+</section>
+-->
+<footer>Form 1 English PDPR practice · Intermediate level · Designed for independent practice</footer>
 </main>
-<footer>English Form 1 • Revision practice</footer>
 <script>
-const quiz = [
- {q:"My mother works in a hospital. She is a _____.", options:["nurse","farmer","pilot","mechanic"], a:0, why:"A nurse cares for patients in a hospital."},
- {q:"Ali _____ to school every day.", options:["walk","walks","walking","walked"], a:1, why:"Use “walks” with the singular subject Ali in the simple present."},
- {q:"They _____ playing badminton now.", options:["is","am","are","was"], a:2, why:"Use “are” with “they” in the present continuous tense."},
- {q:"I have _____ orange in my bag.", options:["a","an","some","any"], a:1, why:"Use “an” before a vowel sound, as in “orange”."},
- {q:"What is the opposite of “big”?", options:["long","small","wide","tall"], a:1, why:"“Small” is the opposite of “big”."},
- {q:"The boys _____ football yesterday.", options:["play","plays","played","playing"], a:2, why:"“Played” is the simple past form of “play”. “Yesterday” tells us the action happened in the past."},
- {q:"My birthday is _____ July.", options:["at","on","in","by"], a:2, why:"Use “in” with months, for example, “in July”."},
- {q:"According to the reading passage, how does Farah travel to school?", options:["By car","By bus","On foot","By train"], a:1, why:"The passage says Farah goes to school by bus every morning."},
- {q:"True or False: “She walk to school every day” uses the correct simple present verb form.", options:["True","False"], a:1, why:"The correct sentence is “She walks to school every day.” With “she”, the verb takes -s in the simple present."},
- {q:"True or False: A library is a place where people can borrow books.", options:["True","False"], a:0, why:"A library is a place where people can read or borrow books."},
- {q:"My father drives a bus. He is a _____.", options:["driver","dentist","chef","artist"], a:0, why:"A driver drives a vehicle."},
- {q:"We use a _____ to tell the time.", options:["pillow","clock","plate","brush"], a:1, why:"A clock tells us the time."},
- {q:"Which word is a fruit?", options:["Carrot","Cabbage","Mango","Potato"], a:2, why:"A mango is a fruit."},
- {q:"A person who teaches students is a _____.", options:["teacher","waiter","pilot","baker"], a:0, why:"A teacher teaches students."},
- {q:"What is the opposite of ‘early’?", options:["Quick","Late","Soon","Fast"], a:1, why:"‘Late’ is the opposite of ‘early’."},
- {q:"Which word means the same as ‘happy’?", options:["Glad","Angry","Tired","Afraid"], a:0, why:"‘Glad’ has a similar meaning to ‘happy’."},
- {q:"You wear _____ on your feet.", options:["gloves","shoes","hats","scarves"], a:1, why:"Shoes are worn on your feet."},
- {q:"Which one is a wild animal?", options:["Cow","Goat","Tiger","Chicken"], a:2, why:"A tiger is a wild animal."},
- {q:"We borrow books from the _____.", options:["canteen","library","field","office"], a:1, why:"Books can be borrowed from a library."},
- {q:"Which activity is a sport?", options:["Swimming","Sleeping","Cooking","Reading"], a:0, why:"Swimming is a sport."},
- {q:"There _____ two cats under the table.", options:["is","are","am","be"], a:1, why:"Use ‘are’ with plural nouns such as ‘two cats’."},
- {q:"I _____ a student in Form 1.", options:["is","are","am","be"], a:2, why:"Use ‘am’ with the subject ‘I’."},
- {q:"Siti and Mei Ling _____ good friends.", options:["is","am","are","was"], a:2, why:"Use ‘are’ with two people (a plural subject)."},
- {q:"He _____ breakfast at seven o’clock every morning.", options:["eat","eats","eating","ate"], a:1, why:"In the simple present, use ‘eats’ with ‘he’."},
- {q:"Look! The baby _____.", options:["sleep","sleeps yesterday","is sleeping","slept tomorrow"], a:2, why:"Use the present continuous for an action happening now."},
- {q:"We _____ watching television at the moment.", options:["is","am","are","was"], a:2, why:"Use ‘are’ with ‘we’ in the present continuous."},
- {q:"Last Sunday, we _____ our grandparents.", options:["visit","visits","visited","visiting"], a:2, why:"‘Last Sunday’ indicates the simple past; ‘visit’ becomes ‘visited’."},
- {q:"She _____ her homework last night.", options:["finish","finishes","finished","finishing"], a:2, why:"Use the past form ‘finished’ for an action last night."},
- {q:"_____ you like apples?", options:["Do","Does","Are","Is"], a:0, why:"Use ‘Do’ to form a simple present question with ‘you’."},
- {q:"_____ your brother play football?", options:["Do","Does","Is","Are"], a:1, why:"Use ‘Does’ with ‘your brother’ (he)."},
- {q:"There isn’t _____ milk in the fridge.", options:["some","many","any","a"], a:2, why:"‘Any’ is commonly used in negative sentences."},
- {q:"How _____ pencils do you have?", options:["much","many","any","long"], a:1, why:"Use ‘many’ with countable plural nouns such as pencils."},
- {q:"How _____ water do you drink every day?", options:["many","much","few","number"], a:1, why:"Use ‘much’ with uncountable nouns such as water."},
- {q:"The ball is _____ the box. (inside it)", options:["in","between","behind of","at"], a:0, why:"‘In’ means inside something."},
- {q:"The school is _____ the bank and the shop.", options:["under","between","into","during"], a:1, why:"Use ‘between’ for something in the middle of two things."},
- {q:"My birthday is _____ Monday.", options:["in","at","on","from"], a:2, why:"Use ‘on’ with days of the week."},
- {q:"We usually have dinner _____ 7 p.m.", options:["on","in","at","by of"], a:2, why:"Use ‘at’ for a specific time."},
- {q:"This is _____ book. I bought it yesterday.", options:["me","my","I","mine is"], a:1, why:"‘My’ is a possessive adjective used before a noun."},
- {q:"That bag belongs to Amir. It is _____.", options:["he","him","his","he's"], a:2, why:"‘His’ is a possessive pronoun/adjective showing ownership."},
- {q:"A giraffe is _____ than a goat.", options:["tall","taller","tallest","more tall"], a:1, why:"Use the comparative ‘taller’ when comparing two things."},
- {q:"Mountains are usually _____ than hills.", options:["high","higher","highest","more high"], a:1, why:"Use ‘higher’ to compare mountains and hills."},
- {q:"This is the _____ building in our town.", options:["tall","taller","tallest","more tall"], a:2, why:"Use the superlative ‘tallest’ when comparing one with a whole group."},
- {q:"You _____ run in the school corridor. It is dangerous.", options:["should","shouldn’t","can","are"], a:1, why:"‘Shouldn’t’ gives advice not to do something dangerous."},
- {q:"You have a toothache. You _____ see a dentist.", options:["should","shouldn’t","is","does"], a:0, why:"‘Should’ is used to give advice."},
- {q:"I can _____ a bicycle.", options:["rides","riding","ride","rode"], a:2, why:"Use the base form of the verb after ‘can’."},
- {q:"Students _____ wear their school uniforms.", options:["has to","have to","having to","had"], a:1, why:"Use ‘have to’ with the plural subject ‘students’."},
- {q:"Which sentence is correct?", options:["He don't like fish.","He doesn't likes fish.","He doesn't like fish.","He not like fish."], a:2, why:"After ‘doesn't’, use the base form ‘like’."},
- {q:"Choose the correct plural of ‘child’.", options:["childs","children","childes","childrens"], a:1, why:"The plural of ‘child’ is ‘children’."},
- {q:"Choose the correct plural of ‘box’.", options:["boxs","boxies","boxes","boxen"], a:2, why:"Most nouns ending in -x add -es to form the plural."},
- {q:"Which word is an adjective in ‘The blue bag is mine’?", options:["The","blue","bag","mine"], a:1, why:"‘Blue’ describes the bag, so it is an adjective."},
- {q:"Which word is a verb in ‘The birds sing sweetly’?", options:["birds","sing","sweetly","the"], a:1, why:"‘Sing’ expresses the action."},
- {q:"Choose the correct question mark sentence.", options:["Where do you live?","Where do you live.","Where do you live!","Where, do you live"], a:0, why:"A direct question ends with a question mark."},
- {q:"Choose the correctly punctuated sentence.", options:["my name is ali.","My name is Ali.","My name is ali","my Name is Ali."], a:1, why:"Begin a sentence with a capital letter and capitalise names."},
- {q:"Which greeting is suitable at 8.00 a.m.?", options:["Good night","Good morning","Good evening yesterday","Good afternoon"], a:1, why:"‘Good morning’ is used in the morning."},
- {q:"If someone says ‘Thank you’, you can reply _____.", options:["You're welcome","Good night yesterday","I'm thirteen years old","Excuse me, where?"], a:0, why:"‘You're welcome’ is a polite response to ‘Thank you’."},
- {q:"Which phrase asks someone to repeat something?", options:["Hurry up!","Can you say that again?","Congratulations!","Let's eat."], a:1, why:"‘Can you say that again?’ politely asks for repetition."},
- {q:"Choose the best word: I am thirsty. I need a _____.", options:["drink","blanket","ticket","pencil case"], a:0, why:"A thirsty person needs a drink."},
- {q:"Choose the best word: It is raining. Take your _____.", options:["sunglasses only","umbrella","swimming costume","slippers for bed"], a:1, why:"An umbrella helps keep you dry in the rain."},
- {q:"Which place can you go to see a doctor?", options:["Clinic","Stadium","Bookshop","Bus stop"], a:0, why:"A clinic is a place where people receive medical care."},
- {q:"Which item do you use to write in a notebook?", options:["Spoon","Pencil","Plate","Towel"], a:1, why:"A pencil is used for writing."}
-];
-const container = document.getElementById('questions');
-quiz.forEach((item,i) => {
-  const section = document.createElement('section');
-  section.className = 'question';
-  const title = document.createElement('p');
-  title.className = 'qtitle';
-  title.innerHTML = `<span class="qnum">${i+1}.</span> ${item.q}`;
-  section.appendChild(title);
-  const options = document.createElement('div');
-  options.className = 'options' + (item.options.length === 4 ? ' two-col' : '');
-  item.options.forEach((option,j) => {
-    const label = document.createElement('label');
-    label.className = 'option';
-    const input = document.createElement('input');
-    input.type = 'radio'; input.name = `q${i}`; input.value = j; input.required = true;
-    const text = document.createElement('span');
-    text.textContent = `${String.fromCharCode(65+j)}. ${option}`;
-    label.append(input,text); options.appendChild(label);
-  });
-  section.appendChild(options);
-  container.appendChild(section);
-});
-const form = document.getElementById('quizForm');
-const results = document.getElementById('results');
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  let score = 0;
-  const review = document.getElementById('review');
-  review.replaceChildren();
-  quiz.forEach((item,i) => {
-    const chosen = form.querySelector(`input[name="q${i}"]:checked`);
-    const val = chosen ? Number(chosen.value) : -1;
-    const correct = val === item.a;
-    if(correct) score++;
-    const row = document.createElement('div'); row.className = 'result-row';
-    const heading = document.createElement('div');
-    heading.className = correct ? 'correct' : 'incorrect';
-    heading.textContent = `${i+1}. ${correct ? 'Correct' : 'Not quite'}`;
-    const answer = document.createElement('div');
-    answer.textContent = `Correct answer: ${String.fromCharCode(65+item.a)}. ${item.options[item.a]}`;
-    const explanation = document.createElement('p'); explanation.className='explain'; explanation.textContent=item.why;
-    row.append(heading,answer,explanation); review.appendChild(row);
-  });
-  const name = document.getElementById('studentName').value.trim();
-  document.getElementById('greeting').textContent = name ? `Well done, ${name}. Here is your result:` : 'Here is your result:';
-  document.getElementById('score').textContent = `${score} / ${quiz.length}`;
-  const pct = score / quiz.length;
-  document.getElementById('comment').textContent = pct === 1 ? 'Excellent work! You answered every question correctly.' : pct >= .7 ? 'Good effort! Review any questions you missed.' : pct >= .5 ? 'Nice try. Read the explanations and practise again.' : 'Keep practising. Review the explanations and try the quiz again.';
-  results.classList.remove('hidden');
-  results.scrollIntoView({behavior:'smooth',block:'start'});
-  form.querySelectorAll('input').forEach(el => el.disabled = true);
-  form.querySelector('button[type="submit"]').disabled = true;
-});
-function resetQuiz() {
-  form.reset();
-  form.querySelectorAll('input').forEach(el => el.disabled = false);
-  form.querySelector('button[type="submit"]').disabled = false;
-  results.classList.add('hidden');
-  document.getElementById('studentName').focus();
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-document.getElementById('resetBtn').addEventListener('click',resetQuiz);
-document.getElementById('retryBtn').addEventListener('click',resetQuiz);
-document.getElementById('printBtn').addEventListener('click',()=>window.print());
+const answers={q1:'B',q2:'C',q3:'B',q4:'D',q5:'A',q6:'B',q7:'C',q8:'C',q9:'B',q10:'C',q11:'C',q12:'A',q13:'C',q14:'B',q15:'C',q16:'A',q17:'B',q18:'A',q19:'B',q20:'B',q21:'A',q22:'B',q23:'A',q24:'A',q25:'A',q26:'B',q27:'A',q28:'A',q29:'B',q30:'A',q31:'B',q32:'C',q33:'C',q34:'A',q35:'B',q36:'C',q37:'B',q38:'C',q39:'A',q40:'B',q41:'B',q42:'C',q43:'A',q44:'B',q45:'C',q46:'A',q47:'A',q48:'B',q49:'B',q50:'C'};
+let remaining=150*60, timerId=null;
+function updateTimer(){const m=Math.floor(remaining/60),s=remaining%60;document.getElementById('timer').textContent='Time: '+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');if(remaining<=0){clearInterval(timerId);document.getElementById('timer').textContent='Time is up — please check your answers.';return;}remaining--;}
+updateTimer();timerId=setInterval(updateTimer,1000);
+function markQuiz(){let score=0,answered=0,bySection=[0,0,0,0];for(let i=1;i<=50;i++){const chosen=document.querySelector('input[name="q'+i+'"]:checked');if(chosen){answered++;if(chosen.value===answers['q'+i]){score++;if(i<=15)bySection[0]++;else if(i<=30)bySection[1]++;else if(i<=40)bySection[2]++;else bySection[3]++;}}}
+const r=document.getElementById('result');r.style.display='block';r.innerHTML='<strong>Objective score: '+score+'/50 ('+Math.round(score*2)+'%)</strong><br>Answered: '+answered+'/50<br>Grammar: '+bySection[0]+'/15 · Vocabulary: '+bySection[1]+'/15 · Reading: '+bySection[2]+'/10 · Functional English: '+bySection[3]+'/10<br><span class="small">This score excludes both writing tasks. Review any unanswered questions before finishing.</span>';r.scrollIntoView({behavior:'smooth',block:'center'});}
+function toggleKey(){const k=document.getElementById('answerKey');k.style.display=k.style.display==='block'?'none':'block';}
+function resetScore(){document.getElementById('result').style.display='none';}
+function downloadAnswers(){const name=document.getElementById('studentName').value||'Student';const cls=document.getElementById('studentClass').value||'Not entered';let out='FORM 1 ENGLISH — PDPR PRACTICE\\nName: '+name+'\\nClass: '+cls+'\\n\\n';for(let i=1;i<=50;i++){const a=document.querySelector('input[name="q'+i+'"]:checked');out+=i+'. '+(a?a.value:'Not answered')+'\\n';}out+='\\nTASK 1: EMAIL\\n'+(document.querySelector('[name="writing1"]').value||'No answer entered')+'\\n\\nTASK 2: COMPOSITION\\n'+(document.querySelector('[name="writing2"]').value||'No answer entered');const blob=new Blob([out],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='form1-english-answers.txt';link.click();URL.revokeObjectURL(url);}
 </script>
 </body>
 </html>
